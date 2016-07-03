@@ -22,8 +22,10 @@ class ExampleMVVMFlowTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let modelOwl = OwlModel()
+        let list = ListViewModel<OwlModel>(model: modelOwl)
+        list.printAll()
+        
     }
     
     func testPerformanceExample() {
