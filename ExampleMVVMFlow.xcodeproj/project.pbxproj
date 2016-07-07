@@ -19,6 +19,8 @@
 		18FBD3FE1D298E270074A852 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBD3FD1D298E270074A852 /* Model.swift */; };
 		18FBD4001D29A67C0074A852 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBD3FF1D29A67C0074A852 /* GridViewController.swift */; };
 		18FBD4021D29A7DD0074A852 /* OwlsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBD4011D29A7DD0074A852 /* OwlsFlowController.swift */; };
+		18FBD4041D2DDEC50074A852 /* OwlDetailFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBD4031D2DDEC50074A852 /* OwlDetailFlowController.swift */; };
+		18FBD4061D2DE0470074A852 /* OwlDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBD4051D2DE0470074A852 /* OwlDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		18FBD3FD1D298E270074A852 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		18FBD3FF1D29A67C0074A852 /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		18FBD4011D29A7DD0074A852 /* OwlsFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwlsFlowController.swift; sourceTree = "<group>"; };
+		18FBD4031D2DDEC50074A852 /* OwlDetailFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwlDetailFlowController.swift; sourceTree = "<group>"; };
+		18FBD4051D2DE0470074A852 /* OwlDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwlDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 				18FBD3F11D28A0EC0074A852 /* FlowController.swift */,
 				18FBD3F31D28A2410074A852 /* MainFlowController.swift */,
 				18FBD4011D29A7DD0074A852 /* OwlsFlowController.swift */,
+				18FBD4031D2DDEC50074A852 /* OwlDetailFlowController.swift */,
 			);
 			name = FlowController;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			children = (
 				18FBD3D21D289A8D0074A852 /* ListViewController.swift */,
 				18FBD3FF1D29A67C0074A852 /* GridViewController.swift */,
+				18FBD4051D2DE0470074A852 /* OwlDetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -251,10 +257,12 @@
 				18FBD3FE1D298E270074A852 /* Model.swift in Sources */,
 				18FBD3FA1D2983D90074A852 /* ListViewModel.swift in Sources */,
 				18FBD3F41D28A2410074A852 /* MainFlowController.swift in Sources */,
+				18FBD4061D2DE0470074A852 /* OwlDetailViewController.swift in Sources */,
 				18FBD3FC1D2984AE0074A852 /* OwlModel.swift in Sources */,
 				18FBD3D31D289A8D0074A852 /* ListViewController.swift in Sources */,
 				18FBD3D11D289A8D0074A852 /* AppDelegate.swift in Sources */,
 				18FBD3F21D28A0EC0074A852 /* FlowController.swift in Sources */,
+				18FBD4041D2DDEC50074A852 /* OwlDetailFlowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

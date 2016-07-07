@@ -11,6 +11,11 @@ import UIKit
 struct ConfigureGrid {
     let viewLayout : UICollectionViewLayout
     let title : String
+    let delegate : GridViewControllerDelegate
+}
+
+protocol GridViewControllerDelegate {
+    func openDetail(id : Int)
 }
 
 class GridViewCell : UICollectionViewCell {
@@ -18,14 +23,20 @@ class GridViewCell : UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        image = UIImageView(frame : self.frame)
-        self.addSubview(image!)
+        setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        image = UIImageView(frame : self.frame)
-        self.addSubview(image!)
+        setupUI()
+    }
+    
+    private func setupUI() {
+        subviews.filter { $0 as? UIImageView != nil}.forEach {$0.removeFromSuperview()}
+        image = UIImageView(frame : CGRect(x: 0, y: 0, width: 120, height: 120))
+        if let image = self.image {
+            self.addSubview(image)
+        }
     }
 }
 
@@ -33,11 +44,13 @@ class GridViewController<M : ListModel>: UICollectionViewController {
     
     var viewModel : ListViewModel<M>
     var populateCell : (M.Model,GridViewCell) -> (Void)
+    var configure : ConfigureGrid
     
     
     init(viewModel model : ListViewModel<M>, configure : ConfigureGrid, populateCell : (M.Model,GridViewCell) -> (Void)) {
         self.viewModel = model
         self.populateCell = populateCell
+        self.configure = configure
         super.init(collectionViewLayout: configure.viewLayout)
         self.collectionView?.frame = self.view.frame
         self.collectionView?.scrollEnabled = true
@@ -71,12 +84,16 @@ class GridViewController<M : ListModel>: UICollectionViewController {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
-        return CGSize(width: 50, height: 50)
+        return CGSize(width: 120, height: 120)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
     {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.configure.delegate.openDetail(indexPath.row)
     }
     
 }

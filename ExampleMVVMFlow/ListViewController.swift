@@ -11,17 +11,23 @@ import UIKit
 struct ConfigureTable {
     let styleTable : UITableViewStyle
     let title : String
+    let delegate : ListTableViewControllerDelegate
+}
+
+protocol ListTableViewControllerDelegate {
+    func openDetail(id : Int)
 }
 
 class ListTableViewController<M : ListModel>: UITableViewController {
     
     var viewModel : ListViewModel<M>
     var populateCell : (M.Model,UITableViewCell) -> (Void)
-    
+    var configure : ConfigureTable
     
     init(viewModel model : ListViewModel<M>, configure : ConfigureTable, populateCell : (M.Model,UITableViewCell) -> (Void)) {
         self.viewModel = model
         self.populateCell = populateCell
+        self.configure = configure
         super.init(style: configure.styleTable)
         self.title = configure.title
     }
@@ -46,6 +52,10 @@ class ListTableViewController<M : ListModel>: UITableViewController {
         let cell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
         populateCell(viewModel.item(ofIndex: indexPath.row), cell)
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        configure.delegate.openDetail(indexPath.row)
     }
 
 }
