@@ -11,7 +11,7 @@ import UIKit
 
 class OwlDetailFlowController : FlowController, DetailViewControllerDelegate {
     
-    private let showType = ShowType.Screen
+    private let showType = ShowType.Overlay
     private let configure : FlowConfigure
     private var viewModel : DetailModel?
     
@@ -28,13 +28,16 @@ class OwlDetailFlowController : FlowController, DetailViewControllerDelegate {
         
         switch showType {
         case .Screen:
-            let configureDetail = ConfigureDetail(title: "Detail", delegate: self)
+            let configureDetail = ConfigureDetail(title: "Detail", delegate: self, modal: false)
              let viewController = OwlDetailViewController<Owl>(viewModel: viewModel!, configure: configureDetail)
             configure.navigationController?.pushViewController(viewController, animated: false)
             break
         case .Overlay:
-            
-          //  configure.navigationController?.pushViewController(viewController, animated: false)
+            let configureDetail = ConfigureDetail(title: "Detail", delegate: self, modal: true)
+            let viewController = OwlDetailViewController<Owl>(viewModel: viewModel!, configure: configureDetail)
+            viewController.modalPresentationStyle = .OverCurrentContext
+            configure.navigationController?.presentViewController(viewController, animated: false,completion : nil)
+
             break
         }
         

@@ -9,7 +9,7 @@
 import Foundation
 
 
-class ListViewModel<T : ListModel> {
+public class ListViewModel<T : ListModel> {
     let model : T
     
     init(model : T) {

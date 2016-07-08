@@ -33,12 +33,13 @@ class OwlsFlowController : FlowController, GridViewControllerDelegate, ListTable
             configure.navigationController?.pushViewController(viewController, animated: false)
             break
         case .Grid:
-            let layoutGrid = UICollectionViewFlowLayout()
+             let layoutGrid = UICollectionViewFlowLayout()
             layoutGrid.scrollDirection = .Vertical
             let configureGrid = ConfigureGrid(viewLayout: layoutGrid, title: "Grid of Owls", delegate: self)
-            let viewController = GridViewController<OwlModel>(viewModel: viewModel, configure: configureGrid) { owl, cell in
-                cell.image?.image = owl.image
+            let viewController = GridViewController<OwlModel>(configure: configureGrid) { owl, cell in
+                cell.image?.image = owl.avatar
             }
+             viewController.configure(viewModel:viewModel)
             configure.navigationController?.pushViewController(viewController, animated: false)
             break
         }

@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-protocol Model {
+public protocol Model {
     
 }
 
-protocol ListModel : Model {
+public protocol ListModel : Model {
   associatedtype Model = Any
   func all() -> [Model]
   func one(at index: Int) -> Model
