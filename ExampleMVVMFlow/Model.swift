@@ -16,7 +16,7 @@ public protocol Model {
 public protocol ListModel : Model {
   associatedtype Model = Any
   func all() -> [Model]
-  func one(at index: Int) -> Model
+  func one(at index: Int) -> Model?
 }
 
 protocol DetailModel : Model {

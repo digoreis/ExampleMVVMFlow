@@ -26,7 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +36,16 @@
                BlueprintIdentifier = "18FBD3E01D289A8E0074A852"
                BuildableName = "ExampleMVVMFlowTests.xctest"
                BlueprintName = "ExampleMVVMFlowTests"
+               ReferencedContainer = "container:ExampleMVVMFlow.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "18231B191D4545AC006DCCB9"
+               BuildableName = "ExampleMVVMFlowUITests.xctest"
+               BlueprintName = "ExampleMVVMFlowUITests"
                ReferencedContainer = "container:ExampleMVVMFlow.xcodeproj">
             </BuildableReference>
          </TestableReference>

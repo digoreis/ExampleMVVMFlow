@@ -52,8 +52,10 @@ class OwlsFlowController : FlowController, GridViewControllerDelegate, ListTable
     }
     
     func openDetail(id : Int) {
-         let detail = FlowConfigure(window: nil, navigationController: configure.navigationController, parent: self)
-         let childFlow = OwlDetailFlowController(configure: detail,item: viewModel.item(ofIndex: id))
-         childFlow.start()
+        if let item = viewModel.item(ofIndex: id) {
+            let detail = FlowConfigure(window: nil, navigationController: configure.navigationController, parent: self)
+            let childFlow = OwlDetailFlowController(configure: detail,item: item)
+            childFlow.start()
+        }
     }
 }

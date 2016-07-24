@@ -59,8 +59,11 @@ class OwlModel : ListModel {
         return base
     }
     
-    func one(at index: Int)  -> Owl{
-        return base[index]
+    func one(at index: Int)  -> Owl? {
+        if index >= 0 && index < base.count {
+            return base[index]
+        }
+        return nil
     }
 }
 

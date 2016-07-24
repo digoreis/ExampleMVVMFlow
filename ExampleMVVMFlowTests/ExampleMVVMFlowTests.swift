@@ -11,6 +11,7 @@ import XCTest
 
 class ExampleMVVMFlowTests: XCTestCase {
     
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,17 +22,40 @@ class ExampleMVVMFlowTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testFailCount() {
         let modelOwl = OwlModel()
         let list = ListViewModel<OwlModel>(model: modelOwl)
-        list.printAll()
-        
+        XCTAssertNotEqual(list.count(), 0)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    func testSuccessCount() {
+        let modelOwl = OwlModel()
+        let list = ListViewModel<OwlModel>(model: modelOwl)
+        XCTAssertEqual(list.count(), 21)
+    }
+    
+    func testFailGetItem() {
+    let modelOwl = OwlModel()
+    let list = ListViewModel<OwlModel>(model: modelOwl)
+        XCTAssertNil(list.item(ofIndex: -1))
+        XCTAssertNil(list.item(ofIndex: list.count()))
+    }
+    
+    func testSuccessGetItem() {
+        let modelOwl = OwlModel()
+        let list = ListViewModel<OwlModel>(model: modelOwl)
+        XCTAssertNotNil(list.item(ofIndex: 0))
+        XCTAssertNotNil(list.item(ofIndex: list.count() - 1))
+    }
+    
+    func testSuccessDetailItem() {
+        let modelOwl = OwlModel()
+        let list = ListViewModel<OwlModel>(model: modelOwl)
+        for i in 0 ..< list.count() {
+            let item = list.item(ofIndex: i)
+            XCTAssertNotNil(item?.title())
+            XCTAssertNotNil(item?.text())
+            XCTAssertNotNil(item?.image())
         }
     }
     

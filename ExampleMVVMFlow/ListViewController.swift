@@ -50,7 +50,9 @@ class ListTableViewController<M : ListModel>: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
-        populateCell(viewModel.item(ofIndex: indexPath.row), cell)
+        if let item = viewModel.item(ofIndex: indexPath.row) {
+            populateCell(item, cell)
+        }
         return cell
     }
     

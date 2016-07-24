@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180866BA1D456E0D00940365 /* DetailViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180866B91D456E0D00940365 /* DetailViewUITest.swift */; };
+		180866BF1D4574DD00940365 /* FlowTestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180866BB1D4571DD00940365 /* FlowTestRouter.swift */; };
+		18231B111D452818006DCCB9 /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18231B101D452818006DCCB9 /* FlowTests.swift */; };
+		18231B131D452A3D006DCCB9 /* ViewControllersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18231B121D452A3D006DCCB9 /* ViewControllersTests.swift */; };
+		18231B241D4545BF006DCCB9 /* ListViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18231B141D453CBE006DCCB9 /* ListViewUITest.swift */; };
 		18FBD3D11D289A8D0074A852 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBD3D01D289A8D0074A852 /* AppDelegate.swift */; };
 		18FBD3D31D289A8D0074A852 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBD3D21D289A8D0074A852 /* ListViewController.swift */; };
 		18FBD3D81D289A8D0074A852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FBD3D71D289A8D0074A852 /* Assets.xcassets */; };
@@ -24,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		18231B1F1D4545AC006DCCB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18FBD3C51D289A8D0074A852 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18FBD3CC1D289A8D0074A852;
+			remoteInfo = ExampleMVVMFlow;
+		};
 		18FBD3E21D289A8E0074A852 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 18FBD3C51D289A8D0074A852 /* Project object */;
@@ -34,6 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180866B91D456E0D00940365 /* DetailViewUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewUITest.swift; sourceTree = "<group>"; };
+		180866BB1D4571DD00940365 /* FlowTestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlowTestRouter.swift; path = ExampleMVVMFlowUITests/FlowTestRouter.swift; sourceTree = SOURCE_ROOT; };
+		18231B101D452818006DCCB9 /* FlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowTests.swift; sourceTree = "<group>"; };
+		18231B121D452A3D006DCCB9 /* ViewControllersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersTests.swift; sourceTree = "<group>"; };
+		18231B141D453CBE006DCCB9 /* ListViewUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewUITest.swift; sourceTree = "<group>"; };
+		18231B1A1D4545AC006DCCB9 /* ExampleMVVMFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleMVVMFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18231B1E1D4545AC006DCCB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18FBD3CD1D289A8D0074A852 /* ExampleMVVMFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleMVVMFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FBD3D01D289A8D0074A852 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18FBD3D21D289A8D0074A852 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +74,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		18231B171D4545AC006DCCB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18FBD3CA1D289A8D0074A852 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,11 +98,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18231B1B1D4545AC006DCCB9 /* ExampleMVVMFlowUITests */ = {
+			isa = PBXGroup;
+			children = (
+				18231B141D453CBE006DCCB9 /* ListViewUITest.swift */,
+				18231B1E1D4545AC006DCCB9 /* Info.plist */,
+				180866B91D456E0D00940365 /* DetailViewUITest.swift */,
+			);
+			path = ExampleMVVMFlowUITests;
+			sourceTree = "<group>";
+		};
 		18FBD3C41D289A8D0074A852 = {
 			isa = PBXGroup;
 			children = (
 				18FBD3CF1D289A8D0074A852 /* ExampleMVVMFlow */,
 				18FBD3E41D289A8E0074A852 /* ExampleMVVMFlowTests */,
+				18231B1B1D4545AC006DCCB9 /* ExampleMVVMFlowUITests */,
 				18FBD3CE1D289A8D0074A852 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,6 +123,7 @@
 			children = (
 				18FBD3CD1D289A8D0074A852 /* ExampleMVVMFlow.app */,
 				18FBD3E11D289A8E0074A852 /* ExampleMVVMFlowTests.xctest */,
+				18231B1A1D4545AC006DCCB9 /* ExampleMVVMFlowUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +136,7 @@
 				18FBD3F51D28A3F90074A852 /* ViewController */,
 				18FBD3F71D28A4280074A852 /* ViewModel */,
 				18FBD3D01D289A8D0074A852 /* AppDelegate.swift */,
+				180866BB1D4571DD00940365 /* FlowTestRouter.swift */,
 				18FBD3D71D289A8D0074A852 /* Assets.xcassets */,
 				18FBD3D91D289A8D0074A852 /* LaunchScreen.storyboard */,
 				18FBD3DC1D289A8D0074A852 /* Info.plist */,
@@ -110,6 +149,8 @@
 			children = (
 				18FBD3E51D289A8E0074A852 /* ExampleMVVMFlowTests.swift */,
 				18FBD3E71D289A8E0074A852 /* Info.plist */,
+				18231B101D452818006DCCB9 /* FlowTests.swift */,
+				18231B121D452A3D006DCCB9 /* ViewControllersTests.swift */,
 			);
 			path = ExampleMVVMFlowTests;
 			sourceTree = "<group>";
@@ -155,6 +196,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		18231B191D4545AC006DCCB9 /* ExampleMVVMFlowUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18231B211D4545AC006DCCB9 /* Build configuration list for PBXNativeTarget "ExampleMVVMFlowUITests" */;
+			buildPhases = (
+				18231B161D4545AC006DCCB9 /* Sources */,
+				18231B171D4545AC006DCCB9 /* Frameworks */,
+				18231B181D4545AC006DCCB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18231B201D4545AC006DCCB9 /* PBXTargetDependency */,
+			);
+			name = ExampleMVVMFlowUITests;
+			productName = ExampleMVVMFlowUITests;
+			productReference = 18231B1A1D4545AC006DCCB9 /* ExampleMVVMFlowUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		18FBD3CC1D289A8D0074A852 /* ExampleMVVMFlow */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18FBD3EA1D289A8E0074A852 /* Build configuration list for PBXNativeTarget "ExampleMVVMFlow" */;
@@ -200,6 +259,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Rodrigo Reis";
 				TargetAttributes = {
+					18231B191D4545AC006DCCB9 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 18FBD3CC1D289A8D0074A852;
+					};
 					18FBD3CC1D289A8D0074A852 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -224,11 +287,19 @@
 			targets = (
 				18FBD3CC1D289A8D0074A852 /* ExampleMVVMFlow */,
 				18FBD3E01D289A8E0074A852 /* ExampleMVVMFlowTests */,
+				18231B191D4545AC006DCCB9 /* ExampleMVVMFlowUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		18231B181D4545AC006DCCB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18FBD3CB1D289A8D0074A852 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,6 +319,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		18231B161D4545AC006DCCB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18231B241D4545BF006DCCB9 /* ListViewUITest.swift in Sources */,
+				180866BA1D456E0D00940365 /* DetailViewUITest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18FBD3C91D289A8D0074A852 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,6 +340,7 @@
 				18FBD4061D2DE0470074A852 /* OwlDetailViewController.swift in Sources */,
 				18FBD3FC1D2984AE0074A852 /* OwlModel.swift in Sources */,
 				18FBD3D31D289A8D0074A852 /* ListViewController.swift in Sources */,
+				180866BF1D4574DD00940365 /* FlowTestRouter.swift in Sources */,
 				18FBD3D11D289A8D0074A852 /* AppDelegate.swift in Sources */,
 				18FBD3F21D28A0EC0074A852 /* FlowController.swift in Sources */,
 				18FBD4041D2DDEC50074A852 /* OwlDetailFlowController.swift in Sources */,
@@ -271,12 +352,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				18FBD3E61D289A8E0074A852 /* ExampleMVVMFlowTests.swift in Sources */,
+				18231B111D452818006DCCB9 /* FlowTests.swift in Sources */,
+				18231B131D452A3D006DCCB9 /* ViewControllersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		18231B201D4545AC006DCCB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18FBD3CC1D289A8D0074A852 /* ExampleMVVMFlow */;
+			targetProxy = 18231B1F1D4545AC006DCCB9 /* PBXContainerItemProxy */;
+		};
 		18FBD3E31D289A8E0074A852 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 18FBD3CC1D289A8D0074A852 /* ExampleMVVMFlow */;
@@ -296,6 +384,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		18231B221D4545AC006DCCB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ExampleMVVMFlowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DBANANA";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.reis.ExampleMVVMFlowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ExampleMVVMFlow;
+			};
+			name = Debug;
+		};
+		18231B231D4545AC006DCCB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ExampleMVVMFlowUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DBANANA";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.reis.ExampleMVVMFlowUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ExampleMVVMFlow;
+			};
+			name = Release;
+		};
 		18FBD3E81D289A8E0074A852 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -409,6 +521,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ExampleMVVMFlowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DBANANA";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.reis.ExampleMVVMFlowTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExampleMVVMFlow.app/ExampleMVVMFlow";
@@ -421,6 +534,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ExampleMVVMFlowTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DBANANA";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.reis.ExampleMVVMFlowTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExampleMVVMFlow.app/ExampleMVVMFlow";
@@ -430,6 +544,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		18231B211D4545AC006DCCB9 /* Build configuration list for PBXNativeTarget "ExampleMVVMFlowUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18231B221D4545AC006DCCB9 /* Debug */,
+				18231B231D4545AC006DCCB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		18FBD3C81D289A8D0074A852 /* Build configuration list for PBXProject "ExampleMVVMFlow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -446,6 +569,7 @@
 				18FBD3EC1D289A8E0074A852 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18FBD3ED1D289A8E0074A852 /* Build configuration list for PBXNativeTarget "ExampleMVVMFlowTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +578,7 @@
 				18FBD3EF1D289A8E0074A852 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

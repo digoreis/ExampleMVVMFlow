@@ -15,8 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
         window = UIWindow(frame : UIScreen.mainScreen().bounds)
+        
+        if let window = window where NSProcessInfo.processInfo().arguments.contains("UITestRun") {
+            FlowTestRouter.selectRoute(window, routes: NSProcessInfo.processInfo().arguments)
+            return true
+        }
+        
+
+    
         let configure = FlowConfigure(window: window, navigationController: nil, parent: nil)
         let mainFlow = MainFlowController(configure: configure)
         mainFlow.start()

@@ -20,7 +20,7 @@ public class ListViewModel<T : ListModel> {
         return model.all().count ?? 0
     }
     
-    func item(ofIndex index: Int) -> T.Model {
+    func item(ofIndex index: Int) -> T.Model? {
         return model.one(at : index)
     }
 }
