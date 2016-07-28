@@ -42,7 +42,29 @@ class ViewControllersTests: XCTestCase {
             XCTAssertNotNil(cell)
         }
         viewController.configure(viewModel:viewModel)
+        XCTAssertEqual(viewController.collectionView(viewController.collectionView!, numberOfItemsInSection: 0), 21)
+        XCTAssertEqual(viewController.collectionView?.numberOfSections(), 1)
+        let cell = viewController.collectionView(viewController.collectionView!, cellForItemAtIndexPath: NSIndexPath(forItem: 0, inSection: 0))
+        XCTAssertNotNil(cell)
+        viewController.collectionView(viewController.collectionView!, didSelectItemAtIndexPath: NSIndexPath(forItem: 0, inSection: 0))
+        XCTAssertTrue(true)
     }
+    
+    func testGridControllerWarning() {
+        let modelOwl = OwlModel()
+        let viewModel = ListViewModel<OwlModel>(model: modelOwl)
+        let layoutGrid = UICollectionViewFlowLayout()
+        layoutGrid.scrollDirection = .Vertical
+        let configureGrid = ConfigureGrid(viewLayout: layoutGrid, title: "Grid of Owls", delegate: DelegateMock())
+        let viewController = GridViewController<OwlModel>(configure: configureGrid) { owl, cell in
+            XCTAssertNotNil(owl)
+            XCTAssertNotNil(cell)
+        }
+        viewController.configure(viewModel:viewModel)
+        viewController.didReceiveMemoryWarning()
+        XCTAssertTrue(true)
+    }
+
     
     func testDetailController() {
         let modelOwl = OwlModel()

@@ -1,23 +1,25 @@
 //
-//  ListViewUITest.swift
+//  GridViewUITest.swift
 //  ExampleMVVMFlow
 //
-//  Created by apple on 24/07/16.
+//  Created by Reis on 7/28/16.
 //  Copyright © 2016 Rodrigo Reis. All rights reserved.
 //
 
 import XCTest
 @testable import ExampleMVVMFlow
 
-class ListViewUITest: XCTestCase {
+class GridViewUITest: XCTestCase {
+    
     let app = XCUIApplication()
+    
     override func setUp() {
         super.setUp()
         continueAfterFailure = true
         app.launchArguments.append("UITestRun")
-        app.launchArguments.append("uitest-list")
+        app.launchArguments.append("uitest-grid")
         app.launch()
-
+        
     }
     
     override func tearDown() {
@@ -25,11 +27,12 @@ class ListViewUITest: XCTestCase {
     }
     
     func testListViewControllerItens() {
-        XCTAssertTrue(app.tables.cells.count == 21)
+        XCTAssertTrue(app.collectionViews.cells.count == 8)
     }
     
     func testListViewControllerOpenDetail() {
-        app.tables.cells.elementBoundByIndex(0).tap()
+        app.collectionViews.cells.elementBoundByIndex(0).tap()
+        XCTAssertTrue(app.staticTexts["Ambassador"].exists)
     }
     
 }

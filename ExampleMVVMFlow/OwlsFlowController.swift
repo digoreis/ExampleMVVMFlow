@@ -12,7 +12,7 @@ import UIKit
 
 class OwlsFlowController : FlowController, GridViewControllerDelegate, ListTableViewControllerDelegate {
     
-    private let showType = ShowType.List
+    var showType = (UIDevice.currentDevice().userInterfaceIdiom == .Pad) ? ShowType.Grid : ShowType.List
     private let configure : FlowConfigure
     private let model = OwlModel()
     private let viewModel : ListViewModel<OwlModel>
@@ -46,7 +46,7 @@ class OwlsFlowController : FlowController, GridViewControllerDelegate, ListTable
         
     }
     
-    private enum ShowType {
+    enum ShowType {
         case List
         case Grid
     }

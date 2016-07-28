@@ -11,7 +11,7 @@ import UIKit
 
 class OwlDetailFlowController : FlowController, DetailViewControllerDelegate {
     
-    private let showType = ShowType.Overlay
+    var showType = (UIDevice.currentDevice().userInterfaceIdiom == .Pad) ? ShowType.Screen: ShowType.Overlay
     private let configure : FlowConfigure
     private var viewModel : DetailModel?
     
@@ -47,7 +47,7 @@ class OwlDetailFlowController : FlowController, DetailViewControllerDelegate {
         
     }
     
-    private enum ShowType {
+    enum ShowType {
         case Screen
         case Overlay
     }

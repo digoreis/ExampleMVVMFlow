@@ -19,8 +19,20 @@ class FlowTestRouter {
             window.makeKeyAndVisible()
             
             let owlConf = FlowConfigure(window: nil, navigationController: navigationController, parent: nil)
-            
             let childFlow = OwlsFlowController(configure: owlConf)
+            childFlow.showType = OwlsFlowController.ShowType.List
+            childFlow.start()
+        } else if routes.contains("uitest-grid") {
+            let navigationController = UINavigationController()
+            let frame = window.bounds
+            navigationController.view.frame = frame
+            
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
+            
+            let owlConf = FlowConfigure(window: nil, navigationController: navigationController, parent: nil)
+            let childFlow = OwlsFlowController(configure: owlConf)
+            childFlow.showType = OwlsFlowController.ShowType.Grid
             childFlow.start()
         } else if routes.contains("uitest-detail") {
             let navigationController = UINavigationController()

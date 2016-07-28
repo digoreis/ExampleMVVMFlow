@@ -26,6 +26,7 @@
 		18FBD4021D29A7DD0074A852 /* OwlsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBD4011D29A7DD0074A852 /* OwlsFlowController.swift */; };
 		18FBD4041D2DDEC50074A852 /* OwlDetailFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBD4031D2DDEC50074A852 /* OwlDetailFlowController.swift */; };
 		18FBD4061D2DE0470074A852 /* OwlDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBD4051D2DE0470074A852 /* OwlDetailViewController.swift */; };
+		B8553C121D4AAAEA00F340E1 /* GridViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8553C111D4AAAEA00F340E1 /* GridViewUITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		18FBD4011D29A7DD0074A852 /* OwlsFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwlsFlowController.swift; sourceTree = "<group>"; };
 		18FBD4031D2DDEC50074A852 /* OwlDetailFlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwlDetailFlowController.swift; sourceTree = "<group>"; };
 		18FBD4051D2DE0470074A852 /* OwlDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwlDetailViewController.swift; sourceTree = "<group>"; };
+		B8553C111D4AAAEA00F340E1 /* GridViewUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewUITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				18231B141D453CBE006DCCB9 /* ListViewUITest.swift */,
 				18231B1E1D4545AC006DCCB9 /* Info.plist */,
 				180866B91D456E0D00940365 /* DetailViewUITest.swift */,
+				B8553C111D4AAAEA00F340E1 /* GridViewUITest.swift */,
 			);
 			path = ExampleMVVMFlowUITests;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18231B241D4545BF006DCCB9 /* ListViewUITest.swift in Sources */,
+				B8553C121D4AAAEA00F340E1 /* GridViewUITest.swift in Sources */,
 				180866BA1D456E0D00940365 /* DetailViewUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
