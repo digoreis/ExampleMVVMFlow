@@ -29,7 +29,7 @@ class ListViewUITest: XCTestCase {
     }
     
     func testListViewControllerOpenDetail() {
-        app.tables.cells.elementBoundByIndex(0).tap()
+        app.tables.cells.element(boundBy: 0).tap()
     }
     
 }

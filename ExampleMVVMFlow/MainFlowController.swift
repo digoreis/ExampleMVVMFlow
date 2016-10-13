@@ -10,15 +10,14 @@ import UIKit
 
 
 class MainFlowController : FlowController {
-    let configure : FlowConfigure
-    var childFlow : FlowController?
+    let configure: FlowConfigure
+    var childFlow: FlowController?
     
     required init(configure : FlowConfigure) {
         self.configure = configure
     }
     
     func start() {
-        
         let navigationController = UINavigationController()
         if let frame = configure.window?.bounds {
             navigationController.view.frame = frame

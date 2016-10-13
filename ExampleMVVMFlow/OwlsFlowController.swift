@@ -8,33 +8,35 @@
 
 import UIKit
 
-
-
-class OwlsFlowController : FlowController, GridViewControllerDelegate, ListTableViewControllerDelegate {
+class OwlsFlowController: FlowController, GridViewControllerDelegate, ListTableViewControllerDelegate {
+    var showType = (UIDevice.current.userInterfaceIdiom == .pad) ? ShowType.grid : ShowType.list
     
-    var showType = (UIDevice.currentDevice().userInterfaceIdiom == .Pad) ? ShowType.Grid : ShowType.List
-    private let configure : FlowConfigure
-    private let model = OwlModel()
-    private let viewModel : ListViewModel<OwlModel>
+    fileprivate let configure: FlowConfigure
+    fileprivate let model = OwlModel()
+    fileprivate let viewModel: ListViewModel<OwlModel>
     
-    required init(configure : FlowConfigure) {
+    enum ShowType {
+        case list
+        case grid
+    }
+    
+    required init(configure: FlowConfigure) {
         self.configure = configure
         viewModel = ListViewModel<OwlModel>(model: model)
     }
     
     func start() {
-        
         switch showType {
-        case .List:
-            let configureTable = ConfigureTable(styleTable: .Plain, title: "List of Owls",delegate: self)
+        case .list:
+            let configureTable = ConfigureTable(styleTable: .plain, title: "List of Owls",delegate: self)
             let viewController = ListTableViewController<OwlModel>(viewModel: viewModel, configure: configureTable) { owl, cell in
                 cell.textLabel?.text = owl.name
             }
             configure.navigationController?.pushViewController(viewController, animated: false)
             break
-        case .Grid:
+        case .grid:
              let layoutGrid = UICollectionViewFlowLayout()
-            layoutGrid.scrollDirection = .Vertical
+            layoutGrid.scrollDirection = .vertical
             let configureGrid = ConfigureGrid(viewLayout: layoutGrid, title: "Grid of Owls", delegate: self)
             let viewController = GridViewController<OwlModel>(configure: configureGrid) { owl, cell in
                 cell.image?.image = owl.avatar
@@ -43,15 +45,9 @@ class OwlsFlowController : FlowController, GridViewControllerDelegate, ListTable
             configure.navigationController?.pushViewController(viewController, animated: false)
             break
         }
-        
     }
     
-    enum ShowType {
-        case List
-        case Grid
-    }
-    
-    func openDetail(id : Int) {
+    func openDetailFor(id : Int) {
         if let item = viewModel.item(ofIndex: id) {
             let detail = FlowConfigure(window: nil, navigationController: configure.navigationController, parent: self)
             let childFlow = OwlDetailFlowController(configure: detail,item: item)
