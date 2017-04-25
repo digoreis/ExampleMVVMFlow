@@ -11,9 +11,9 @@ import Foundation
 import UIKit
 
 struct ConfigureDetail {
-    let title : String
-    let delegate : DetailViewControllerDelegate
-    var modal : Bool = false
+    let title: String
+    let delegate: DetailViewControllerDelegate
+    var modal: Bool = false
 }
 
 protocol DetailViewControllerDelegate {
@@ -21,26 +21,30 @@ protocol DetailViewControllerDelegate {
 }
 
 class OwlDetailViewController<M : DetailModel>: UIViewController {
-    var viewModel : DetailModel
-    let configure : ConfigureDetail
-    var lblName : UILabel?
-    var imgAvatar : UIImageView?
-    var lblText : UILabel?
-    var viewCenter : UIView?
+    var viewModel: DetailModel
+    let configure: ConfigureDetail
+    var lblName: UILabel?
+    var imgAvatar: UIImageView?
+    var lblText: UILabel?
+    var viewCenter: UIView?
     
-    init(viewModel model : DetailModel, configure : ConfigureDetail) {
+    init(viewModel model: DetailModel, configure: ConfigureDetail) {
         self.viewModel = model
         self.configure = configure
         super.init(nibName: nil, bundle: nil)
         setupUI()
         title = configure.title
-        
     }
-    private func setupUI() {
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    fileprivate func setupUI() {
         viewCenter = UIView(frame : CGRect(x: 10, y: 80, width: 200, height: 300))
         viewCenter?.layer.cornerRadius = 2.0
         viewCenter?.layer.masksToBounds = true
-        viewCenter?.backgroundColor = UIColor.whiteColor()
+        viewCenter?.backgroundColor = UIColor.white
         viewCenter?.center = view.center
         
         lblName = UILabel(frame: CGRect(x: 10, y: 4, width: 200, height: 20))
@@ -49,59 +53,53 @@ class OwlDetailViewController<M : DetailModel>: UIViewController {
         viewCenter?.addSubview(imgAvatar!)
         imgAvatar?.image = viewModel.image()
         lblText = UILabel(frame: CGRect(x: 10, y: 155, width: 200, height: 20))
-        lblText?.text = viewModel.text().capitalizedString
+        lblText?.text = viewModel.text().capitalized
         viewCenter?.addSubview(lblText!)
         view.addSubview(viewCenter!)
-        lblName?.text = viewModel.title().capitalizedString
+        lblName?.text = viewModel.title().capitalized
     }
     
     func configureModal() {
-        view.backgroundColor = UIColor.clearColor()
-        view.opaque = false
+        view.backgroundColor = UIColor.clear
+        view.isOpaque = false
         setupBlur()
         setupCloseButton()
         insertLine(y: 24, container: viewCenter!)
     }
     
     func setupBlur() {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
         view.addSubview(blurEffectView)
     }
     
     func insertLine(y line : Int,container : UIView) {
         let l = UIView(frame: CGRect(x: 0, y: line, width: Int(container.frame.width) , height: 1))
-        l.backgroundColor = UIColor.grayColor()
+        l.backgroundColor = UIColor.gray
         container.addSubview(l)
     }
     
     func setupCloseButton(){
         let closeButton = UIButton(frame: CGRect(x: 180, y: 4, width: 20, height: 20))
-        closeButton.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
-        closeButton.setTitle("x", forState: .Normal)
-        closeButton.addTarget(self, action: #selector(close), forControlEvents: .TouchDown)
+        closeButton.setTitleColor(UIColor.darkGray, for: UIControlState())
+        closeButton.setTitle("x", for: UIControlState())
+        closeButton.addTarget(self, action: #selector(close), for: .touchDown)
         viewCenter?.addSubview(closeButton)
     }
     
     func close() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         if configure.modal {
             configureModal()
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+    }    
 }
 
 

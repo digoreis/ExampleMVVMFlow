@@ -9,7 +9,7 @@
 import Foundation
 
 
-public class ListViewModel<T : ListModel> {
+open class ListViewModel<T : ListModel> {
     let model : T
     
     init(model : T) {
@@ -17,7 +17,7 @@ public class ListViewModel<T : ListModel> {
     }
     
     func count() -> Int {
-        return model.all().count ?? 0
+        return model.all().count
     }
     
     func item(ofIndex index: Int) -> T.Model? {

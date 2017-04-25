@@ -9,7 +9,7 @@ import UIKit
 
 class FlowTestRouter {
     
-    static func selectRoute(window : UIWindow , routes : [String]) {
+    static func selectRoute(_ window : UIWindow , routes : [String]) {
         if routes.contains("uitest-list") {
             let navigationController = UINavigationController()
             let frame = window.bounds
@@ -20,7 +20,7 @@ class FlowTestRouter {
             
             let owlConf = FlowConfigure(window: nil, navigationController: navigationController, parent: nil)
             let childFlow = OwlsFlowController(configure: owlConf)
-            childFlow.showType = OwlsFlowController.ShowType.List
+            childFlow.showType = OwlsFlowController.ShowType.list
             childFlow.start()
         } else if routes.contains("uitest-grid") {
             let navigationController = UINavigationController()
@@ -32,7 +32,7 @@ class FlowTestRouter {
             
             let owlConf = FlowConfigure(window: nil, navigationController: navigationController, parent: nil)
             let childFlow = OwlsFlowController(configure: owlConf)
-            childFlow.showType = OwlsFlowController.ShowType.Grid
+            childFlow.showType = OwlsFlowController.ShowType.grid
             childFlow.start()
         } else if routes.contains("uitest-detail") {
             let navigationController = UINavigationController()

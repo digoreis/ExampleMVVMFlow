@@ -24,7 +24,7 @@ class ViewControllersTests: XCTestCase {
     func testListViewController() {
         let modelOwl = OwlModel()
         let viewModel = ListViewModel<OwlModel>(model: modelOwl)
-        let configureTable = ConfigureTable(styleTable: .Plain, title: "List of Owls",delegate: DelegateMock())
+        let configureTable = ConfigureTable(styleTable: .plain, title: "List of Owls",delegate: DelegateMock())
         _ = ListTableViewController<OwlModel>(viewModel: viewModel, configure: configureTable) { owl, cell in
             XCTAssertNotNil(owl)
             XCTAssertNotNil(cell)
@@ -35,7 +35,7 @@ class ViewControllersTests: XCTestCase {
         let modelOwl = OwlModel()
         let viewModel = ListViewModel<OwlModel>(model: modelOwl)
         let layoutGrid = UICollectionViewFlowLayout()
-        layoutGrid.scrollDirection = .Vertical
+        layoutGrid.scrollDirection = .vertical
         let configureGrid = ConfigureGrid(viewLayout: layoutGrid, title: "Grid of Owls", delegate: DelegateMock())
         let viewController = GridViewController<OwlModel>(configure: configureGrid) { owl, cell in
             XCTAssertNotNil(owl)
@@ -43,10 +43,10 @@ class ViewControllersTests: XCTestCase {
         }
         viewController.configure(viewModel:viewModel)
         XCTAssertEqual(viewController.collectionView(viewController.collectionView!, numberOfItemsInSection: 0), 21)
-        XCTAssertEqual(viewController.collectionView?.numberOfSections(), 1)
-        let cell = viewController.collectionView(viewController.collectionView!, cellForItemAtIndexPath: NSIndexPath(forItem: 0, inSection: 0))
+        XCTAssertEqual(viewController.collectionView?.numberOfSections, 1)
+        let cell = viewController.collectionView(viewController.collectionView!, cellForItemAt: IndexPath(item: 0, section: 0))
         XCTAssertNotNil(cell)
-        viewController.collectionView(viewController.collectionView!, didSelectItemAtIndexPath: NSIndexPath(forItem: 0, inSection: 0))
+        viewController.collectionView(viewController.collectionView!, didSelectItemAt: IndexPath(item: 0, section: 0))
         XCTAssertTrue(true)
     }
     
@@ -54,7 +54,7 @@ class ViewControllersTests: XCTestCase {
         let modelOwl = OwlModel()
         let viewModel = ListViewModel<OwlModel>(model: modelOwl)
         let layoutGrid = UICollectionViewFlowLayout()
-        layoutGrid.scrollDirection = .Vertical
+        layoutGrid.scrollDirection = .vertical
         let configureGrid = ConfigureGrid(viewLayout: layoutGrid, title: "Grid of Owls", delegate: DelegateMock())
         let viewController = GridViewController<OwlModel>(configure: configureGrid) { owl, cell in
             XCTAssertNotNil(owl)
@@ -65,7 +65,6 @@ class ViewControllersTests: XCTestCase {
         XCTAssertTrue(true)
     }
 
-    
     func testDetailController() {
         let modelOwl = OwlModel()
         let viewModel = ListViewModel<OwlModel>(model: modelOwl)
@@ -76,15 +75,15 @@ class ViewControllersTests: XCTestCase {
     }
     
     
-    class DelegateMock : ListTableViewControllerDelegate,GridViewControllerDelegate {
-        func openDetail(id : Int) {
-            
+    class DelegateMock: ListTableViewControllerDelegate, GridViewControllerDelegate {
+        func openDetailFor(id : Int) {
+            // Do nothing for the tests
         }
     }
     
-    class DetailDelegateMock : DetailViewControllerDelegate {
+    class DetailDelegateMock: DetailViewControllerDelegate {
         func close() {
-            
+            // Do nothing for the tests
         }
     }
 }

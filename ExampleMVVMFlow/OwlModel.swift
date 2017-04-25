@@ -8,10 +8,10 @@
 
 import UIKit
 
-struct Owl : DetailModel {
-    let name : String
-    let description : String
-    let avatar : UIImage?
+struct Owl: DetailModel {
+    let name: String
+    let description: String
+    let avatar: UIImage?
     
     static func loadBase() -> [Owl] {
         return [
@@ -50,7 +50,7 @@ struct Owl : DetailModel {
     }
 }
 
-class OwlModel : ListModel {
+class OwlModel: ListModel {
     typealias Model = Owl
     
     let base = Owl.loadBase()

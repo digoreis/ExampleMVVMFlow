@@ -9,18 +9,18 @@
 import UIKit
 
 enum FlowType {
-    case Main
-    case Navigation
+    case main
+    case navigation
 }
 
 struct FlowConfigure {
-    let window : UIWindow?
-    let navigationController : UINavigationController?
-    let parent : FlowController?
+    let window: UIWindow?
+    let navigationController: UINavigationController?
+    let parent: FlowController?
     
-    func whichFlowIam() -> FlowType? {
-        if window != nil { return .Main }
-        if navigationController != nil { return .Navigation }
+    func whichFlowAmI() -> FlowType? {
+        if window != nil { return .main }
+        if navigationController != nil { return .navigation }
         return nil
     }
 }
